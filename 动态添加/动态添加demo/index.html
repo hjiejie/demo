@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>动态添加</title>
+		 <link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/jquery-3.0.0.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				
+			
+		<!--选择-->
+  <div class="form-group">
+  	
+    <label for="name" class="col-md-10 col-sm-10 col-xs-8" style="padding-left: 0;">姓名</label>
+    <button type="button" class="btn btn-primary col-md-2 col-sm-2 col-xs-4  anniu2" >添加</button>
+    <!--大div-->
+    <!--选择-->
+  <div class="form-group">
+  		  <div class="col-xs-12 " style="padding: 0 0;">
+    	<div class="col-xs-6" style="padding: 0 0;" >		
+    		<input type="text" class="form-control" id="name" placeholder="请输入名称">
+  	</div>
+    	<div class="col-xs-6" style="padding: 0 0;" >	
+    		
+    		<select class="form-control woqu2">
+    			
+      <option >1</option>
+      <option >2</option>
+      <option >3</option>
+      
+    </select>
+    	
+    	
+    </div>	
+    
+    
+    <div class="col-xs-12" style="padding: 0 0;">
+    	
+    
+    <div class="table-responsive">
+    <table class="table table-bordered  table-hover">
+  <caption class="text-center">添加</caption>
+  <thead>
+    <tr>
+      <th class="text-center">姓名</th>
+      <th class="text-center">数字</th>
+      <th class="text-center">删除</th>
+    </tr>
+  </thead>
+  <tbody class="tbody2">
+  	
+    <tr class="text-center biaoge2">	
+      <td id="num1">
+      					
+      	</td> 
+      	<td id="num2">
+      					
+      	</td> 
+      <td class="shanchu2"><button type="button" class="btn btn-primary " >删除</button></td>
+    </tr>
+    
+  </tbody>
+</table>
+</div>
+</div>
+  </div> 
+  </div><!--选择要添加的课程--> 
+  
+  
+</div>
+</div>
+	</body>
+	<script>
+		$(function(){
+			//课程
+	var cg3=$(".biaoge2").clone().html();
+	var cg4=('<tr class="text-center biaoge2">'+cg3+'</tr>');
+	$(".anniu2").click(function(){
+		var se2=$(".woqu2  option:selected").text();
+		console.log(se2);
+		
+		var se3=$("#name").val();
+		console.log(se3);
+		$(".tbody2").append(cg4);	
+		$(".biaoge2:last-child #num2").text(se2);
+		$(" .biaoge2:last-child #num1").text(se3);
+	});	
+	//下拉列表
+		$(".anniu2").click(function(){		
+		$(".shanchu2").click(function(){
+		$(this).parent().remove();
+	});				
+		});
+		$(".tbody2").html("");
+		})
+	</script>
+</html>
